@@ -1,0 +1,22 @@
+services:
+  db:
+    image: postgres:16
+    container_name: lordcares_postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-lordcares}
+      POSTGRES_USER: ${POSTGRES_USER:-lordcares}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-lordcares}
+    ports:
+      - '5432:5432'
+    volumes:
+      - lordcares_pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+    container_name: lordcares_redis
+    ports:
+      - '6379:6379'
+    profiles: ['optional']
+
+volumes:
+  lordcares_pgdata:

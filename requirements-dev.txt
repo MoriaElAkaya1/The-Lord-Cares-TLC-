@@ -1,0 +1,7 @@
+-r requirements.txt
+ruff
+pytest
+pytest-django
+coverage
+mypy
+pre-commit
