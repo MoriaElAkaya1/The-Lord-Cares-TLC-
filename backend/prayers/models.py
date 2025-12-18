@@ -126,7 +126,6 @@ class PrayerAssignment(models.Model):
 
     assigned_at = models.DateTimeField(auto_now_add=True)
 
-    # Optional notes/status per assignment (MVP-safe)
     note = models.TextField(blank=True, default="")
 
     def __str__(self) -> str:
